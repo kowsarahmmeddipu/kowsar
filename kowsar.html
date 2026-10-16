@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kowsar Ahmmed Dipu</title>
+<meta name="description" content="Kowsar Ahmmed Dipu. Find me on LinkedIn, Facebook, Instagram and X.">
+<meta property="og:title" content="Kowsar Ahmmed Dipu">
+<meta property="og:description" content="Find me on LinkedIn, Facebook, Instagram and X.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F2F7; --ink:#10162F; --muted:#586082; --line:#CBD0E3; --accent:#3D5AFE; --on-accent:#FFFFFF;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1124; --ink:#EEF1FF; --muted:#98A2C7; --line:#252E52; --accent:#7C93FF; --on-accent:#0C1124;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1124; --ink:#EEF1FF; --muted:#98A2C7; --line:#252E52; --accent:#7C93FF; --on-accent:#0C1124;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; min-height:100dvh; background:var(--bg); color:var(--ink);
+  font-family:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  display:flex; justify-content:center; align-items:center; padding:clamp(24px,6vw,96px) clamp(16px,5vw,64px); -webkit-text-size-adjust:100%;
+}
+main{width:100%; max-width:680px; display:flex; flex-direction:column; gap:clamp(32px,6vw,64px)}
+nav{min-width:0}
+h1{margin:0; line-height:0}
+.logo{display:block; width:100%; height:auto; fill:currentColor; color:var(--ink); animation:reveal 1s cubic-bezier(.77,0,.18,1) both}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.intro{display:flex; flex-direction:column; gap:22px; align-items:flex-start}
+.intro p{margin:0; font-family:'Newsreader',Georgia,serif; font-style:italic; font-size:clamp(24px,4.5vw,32px); line-height:1.25; color:var(--muted); max-width:24ch}
+.cta{
+  display:inline-flex; align-items:center; gap:12px; padding:15px 24px; border-radius:999px;
+  background:var(--accent); color:var(--on-accent); font-weight:600; font-size:16px; text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.cta svg{width:20px; height:20px; fill:currentColor}
+.cta:hover{transform:translateY(-2px); box-shadow:0 10px 24px -10px var(--accent)}
+.cta:focus-visible,.row:focus-visible{outline:3px solid var(--accent); outline-offset:4px}
+ul{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+.row{
+  position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:baseline; gap:16px;
+  padding:22px 4px; text-decoration:none; color:var(--ink); transition:color .25s ease, padding .25s ease;
+}
+.row::before{
+  content:""; position:absolute; inset:0; z-index:-1; background:var(--accent);
+  transform:scaleX(0); transform-origin:left; transition:transform .35s cubic-bezier(.77,0,.18,1);
+}
+.row:focus-visible,.row:active{color:var(--on-accent); padding-inline:18px}
+.row:focus-visible::before,.row:active::before{transform:scaleX(1)}
+.row:focus-visible .handle,.row:active .handle{color:inherit}
+@media (hover:hover){
+  .row:hover{color:var(--on-accent); padding-inline:18px}
+  .row:hover::before{transform:scaleX(1)}
+  .row:hover .handle{color:inherit}
+}
+.name{font-weight:800; font-size:clamp(28px,6vw,42px); letter-spacing:-.02em; line-height:1.1}
+.handle{margin-left:auto; font-size:15px; color:var(--muted); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; transition:color .25s ease}
+footer{color:var(--muted); font-size:14px}
+@media (max-width:480px){.row{flex-direction:column; gap:4px; align-items:flex-start} .handle{margin-left:0; text-align:left}}
+@media (max-width:360px){.cta{width:100%; justify-content:center; padding-inline:16px} .name{font-size:26px}}
+@media (min-width:720px) and (max-width:959px){main{max-width:720px} .name{font-size:44px}}
+@media (min-width:960px){
+  main{max-width:1120px; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); column-gap:clamp(48px,6vw,96px); row-gap:48px; align-items:center}
+  .intro{grid-column:1; gap:28px}
+  nav{grid-column:2}
+  footer{grid-column:1 / -1; padding-top:24px; border-top:1px solid var(--line)}
+  .intro p{font-size:clamp(28px,2.4vw,40px)}
+  .name{font-size:clamp(34px,3vw,48px)}
+}
+@media (min-width:1600px){
+  main{max-width:1440px}
+  .cta{font-size:19px; padding:18px 30px}
+  .handle{font-size:17px}
+  footer{font-size:16px}
+}
+@media (min-width:2200px){main{max-width:1840px} html{font-size:125%}}
+@media (max-height:520px) and (orientation:landscape){body{align-items:flex-start} main{gap:24px}}
+@media (prefers-reduced-motion:reduce){.logo{animation:none} .row,.row::before,.cta,.handle{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <header class="intro">
+    <h1><svg class="logo" role="img" aria-label="KOWSAR" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 779.68 131.62"><path d="M125.15,465.76H90.74s-28.55-39.22-40.46-33.63c-7.61,3.57,0,33.63,0,33.63H10.16V334.19H50.28s-8.86,34.76,0,38.56c12.85,5.5,40.46-38.56,40.46-38.56h34.41l-45.23,62Z" transform="translate(-10.16 -334.19)"/><path d="M128.91,465.81l.35-131.58H251.72l-.83,131.58Zm92.94-24.63c7.85-9.66,8-72,.36-81.94s-55.71-9.8-63.72.42-8,71.16,0,81.1S214,450.84,221.85,441.18Z" transform="translate(-10.16 -334.19)"/><path d="M442.35,334.19,407.58,465.76H374.73l-24.14-99.18-24.95,99.18H256.81l0-131.57h32.39S283.34,436,309.49,436.86c26.54.83,27.07-102.67,27.07-102.67h31.75s-2.28,103,24,102.49c26.1-.48,20.09-102.49,20.09-102.49Z" transform="translate(-10.16 -334.19)"/><path d="M414.89,465.76l7.54-30.55,83.74,5.92,1-21.56-76.05-20.69,15.7-64.69h88.65l-1.75,31.47L465,359.26l-4.27,17.94,70.69,23.05-3.62,65.51Z" transform="translate(-10.16 -334.19)"/><path d="M533,465.76l7.36-131.57h91.82L679,465.76h-32.3l-8.9-27.43s-38-7-47.71,0c-5.88,4.22-9.26,27.43-9.26,27.43Zm63.49-50.55s29.32,6.93,34.41,0c8.58-11.7-17.43-55.33-17.43-55.33Z" transform="translate(-10.16 -334.19)"/><path d="M789.84,465.76H756.35s-28.44-54.76-43.77-48.9c-11.42,4.36,0,48.9,0,48.9H683L637,334.19h92.89q23.94,0,35.92,9.31t12,27.94a34.76,34.76,0,0,1-7.71,22.62c-5.14,6.33-21.1,14-21.1,14ZM712.58,356.39v38.08h12.85q9.63,0,15.41-5.78a19.4,19.4,0,0,0,5.78-14.31q0-9-5.13-13.49T726,356.39Z" transform="translate(-10.16 -334.19)"/></svg></h1>
+    <p>Find me online, or connect with me on LinkedIn.</p>
+    <a class="cta" href="https://www.linkedin.com/in/kowsar-ahmmed-dipu/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      Connect on LinkedIn
+    </a>
+  </header>
+
+  <nav aria-label="Social profiles">
+    <ul>
+      <li><a class="row" href="https://www.facebook.com/md.kowsarahmmed.dipu" target="_blank" rel="noopener"><span class="name">Facebook</span><span class="handle">md.kowsarahmmed.dipu</span></a></li>
+      <li><a class="row" href="https://www.instagram.com/kowsar_ahmmed_dipu/" target="_blank" rel="noopener"><span class="name">Instagram</span><span class="handle">@kowsar_ahmmed_dipu</span></a></li>
+      <li><a class="row" href="https://x.com/kowsarahmmedipu" target="_blank" rel="noopener"><span class="name">X</span><span class="handle">@kowsarahmmedipu</span></a></li>
+    </ul>
+  </nav>
+
+  <footer>&copy; Kowsar Ahmmed Dipu</footer>
+</main>
+</body>
+</html>
