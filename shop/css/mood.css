@@ -1,0 +1,16 @@
+/* mood switch */
+.mood { position: relative; overflow: hidden; }
+.mood svg { position: absolute; inset: 0; margin: auto; transition: transform .55s cubic-bezier(.2,.8,.2,1), opacity .35s ease; }
+.mood .i-moon { transform: rotate(0) scale(1); opacity: 1; }
+.mood .i-sun { transform: rotate(-90deg) scale(.3); opacity: 0; }
+.mood[data-mode="dark"] .i-moon { transform: rotate(90deg) scale(.3); opacity: 0; }
+.mood[data-mode="dark"] .i-sun { transform: rotate(0) scale(1); opacity: 1; }
+.mood:hover { background: var(--chip); }
+/* smooth fallback when View Transitions are unavailable */
+html.mood-fade, html.mood-fade *, html.mood-fade *::before, html.mood-fade *::after {
+  transition: background-color .6s ease, color .6s ease, border-color .6s ease, fill .6s ease !important;
+}
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+@media (prefers-reduced-motion: reduce) { .mood svg { transition: none; } html.mood-fade * { transition: none !important; } }

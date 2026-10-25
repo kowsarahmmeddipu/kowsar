@@ -3,11 +3,7 @@
   "rewrites": [
     {
       "source": "/shop",
-      "destination": "/shop.html"
-    },
-    {
-      "source": "/shop/",
-      "destination": "/shop.html"
+      "destination": "/shop/index.html"
     }
   ],
   "headers": [

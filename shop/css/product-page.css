@@ -1,0 +1,47 @@
+/* ---------- product details page, bag, toast ---------- */
+.card-link { position: absolute; inset: 0; z-index: 1; border-radius: 18px; }
+.card-art .heart { z-index: 2; }
+.card-art .tag { z-index: 2; pointer-events: none; }
+.card-name a:hover { text-decoration: underline; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.85rem; color: var(--muted); padding-block: 20px; }
+.crumbs a:hover { color: var(--fg); text-decoration: underline; }
+.pdp { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 44px; align-items: start; padding-bottom: 8px; }
+.pdp-art { position: sticky; top: 92px; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 24px; background: var(--art-bg); display: grid; place-items: center; overflow: hidden; }
+.pdp-art .garment { width: 58%; height: 58%; max-width: none; filter: drop-shadow(0 0 1px var(--rim)); transition: color .3s ease; }
+.pdp-art .tag { left: 16px; top: 18px; }
+.pdp-info { min-width: 0; }
+.pdp-info h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px; }
+.pdp-price { font-size: 1.45rem; font-weight: 700; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
+.pdp-sub { margin: 0; color: var(--muted); max-width: 52ch; }
+.opt { margin-top: 24px; }
+.opt-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; font-weight: 700; font-size: 0.9rem; }
+.opt-head span { font-weight: 400; color: var(--muted); }
+.opt-head .link-btn { padding: 0; text-decoration: underline; font-weight: 500; }
+.pdp-err { min-height: 1.3em; margin: 10px 0 0; color: var(--danger); font-size: 0.88rem; font-weight: 500; }
+.buy { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.qty button { width: 44px; height: 50px; border: 0; background: transparent; color: var(--fg); font-size: 1.2rem; cursor: pointer; border-radius: 999px; }
+.qty output { min-width: 28px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.qty.sm button { width: 34px; height: 36px; font-size: 1rem; }
+.btn-lg { min-height: 52px; flex: 1 1 180px; font-size: 1rem; }
+.perks { list-style: none; margin: 24px 0 8px; padding: 18px 0 0; border-top: 1px solid var(--line); display: grid; gap: 10px; color: var(--muted); font-size: 0.9rem; }
+.perks li { display: flex; gap: 10px; align-items: center; }
+.perks svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
+.acc-body ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.related .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 860px) {
+  .pdp { grid-template-columns: 1fr; gap: 24px; }
+  .pdp-art { position: relative; top: auto; aspect-ratio: 1 / 1; }
+  .related .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.bag-item { display: grid; grid-template-columns: 68px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.bag-thumb { aspect-ratio: 1; border-radius: 14px; background: var(--art-bg); display: grid; place-items: center; }
+.bag-thumb svg { width: 64%; height: 64%; filter: drop-shadow(0 0 1px var(--rim)); }
+.bag-meta { color: var(--muted); font-size: 0.85rem; margin: 2px 0 8px; }
+.bag-right { display: grid; justify-items: end; gap: 6px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.bag-right .link-btn { padding: 4px 0; font-size: 0.82rem; font-weight: 500; text-decoration: underline; }
+.bag-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 1.15rem; padding-top: 16px; font-variant-numeric: tabular-nums; }
+.bag-note { margin: 10px 0 0; color: var(--muted); font-size: 0.82rem; }
+.toast { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); background: var(--fg); color: var(--bg); padding: 13px 22px; border-radius: 999px; font-weight: 500; font-size: 0.9rem; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 150; max-width: calc(100% - 32px); text-align: center; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
