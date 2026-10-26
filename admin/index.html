@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KOWSAR Admin</title>
+<link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="dress" viewBox="0 0 200 320"><path d="M82 8c4 18 32 18 36 0l22 14 10 54-22 12 8 40c2 28 14 60 38 102 6 14-2 24-14 26-30 6-84 6-112 0-12-2-20-12-14-26 24-42 36-74 38-102l8-40-22-12 10-54z" fill="currentColor"/></symbol>
+    <symbol id="shirt" viewBox="0 0 220 260"><path d="M78 6c8 18 56 18 64 0l56 28 18 62-38 14-6-28v152H48V82l-6 28-38-14 18-62z" fill="currentColor"/></symbol>
+    <symbol id="coat" viewBox="0 0 220 340"><path d="M82 6c6 14 50 14 56 0l44 22 22 80-30 10-4 28 8 180h-40l-12-134-12 134H78L66 226 54 360h-40l8-180-4-28L-2 118 20 28z" transform="translate(10 0) scale(.92 .92)" fill="currentColor"/></symbol>
+    <symbol id="bag" viewBox="0 0 220 220"><path d="M70 70c0-40 80-40 80 0" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/><path d="M26 70h168l14 128c1 10-6 16-16 16H28c-10 0-17-6-16-16z" fill="currentColor"/></symbol>
+    <symbol id="shoe" viewBox="0 0 260 140"><path d="M14 20h56l14 34c20 8 52 12 92 22 36 8 70 22 70 44v10H14z" fill="currentColor"/></symbol>
+    <symbol id="trouser" viewBox="0 0 160 300"><path d="M30 6h100l10 288h-48L80 120 68 294H20z" fill="currentColor"/></symbol>
+    <symbol id="cap" viewBox="0 0 240 140"><path d="M30 100c-4-60 28-86 90-86s94 26 90 86z" fill="currentColor"/><path d="M110 100h120c10 0 10 20 0 20H110z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+<main class="lock" id="lock" hidden>
+  <form class="lock-card" id="lock-form" novalidate></form>
+</main>
+<div class="app" id="app" hidden>
+  <aside class="side" aria-label="Admin">
+    <div class="brand">KOWSAR<br><span style="font-weight:400;letter-spacing:.04em;color:#8a8a85">Boss panel</span></div>
+    <a class="nav" href="#dashboard" data-nav="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6V11h-6zM14 4v4h6V4zM4 20h6v-3H4z"/></svg>Dashboard</a><a class="nav" href="#products" data-nav="products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10"/></svg>Products</a><a class="nav" href="#orders" data-nav="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>Orders</a><a class="nav" href="#settings" data-nav="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>Settings</a>
+    <div class="grow"></div>
+    <a class="nav" href="/shop" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10"/></svg>View shop</a>
+    <button class="nav" type="button" data-act="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Lock</button>
+  </aside>
+  <div>
+    <nav class="tabs-m" aria-label="Admin"><a href="#dashboard" data-nav="dashboard">Dashboard</a><a href="#products" data-nav="products">Products</a><a href="#orders" data-nav="orders">Orders</a><a href="#settings" data-nav="settings">Settings</a><a href="/shop" target="_blank" rel="noopener">Shop</a><a href="#" data-act="lock" role="button">Lock</a></nav>
+    <main class="main" id="view"></main>
+  </div>
+</div>
+<div class="scrim" id="scrim" hidden><div class="dialog" id="dialog" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/shop/js/data/products.js"></script>
+<script src="/shop/js/data/details.js"></script>
+<script src="/admin/js/store.js"></script>
+<script src="/admin/js/auth.js"></script>
+<script src="/admin/js/dashboard.js"></script>
+<script src="/admin/js/products.js"></script>
+<script src="/admin/js/orders.js"></script>
+<script src="/admin/js/settings.js"></script>
+<script src="/admin/js/app.js"></script>
+</body>
+</html>

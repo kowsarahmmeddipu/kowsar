@@ -10,7 +10,8 @@ Static site, no build step.
     shop/js/              core, catalogue, header-panels, size-guide, global-handlers,
                           product-page, bag, checkout, account, router, init,
                           newsletter, header-scroll, mood
-    vercel.json           maps /shop to shop/index.html
+    admin/                boss panel -> https://kowsar.vercel.app/admin (css/, js/)
+    vercel.json           maps /shop and /admin, hides /admin from search engines
 
 Script order in shop/index.html matters: data first, then core, then the rest.
 
@@ -29,3 +30,10 @@ Push this folder to GitHub, import it in Vercel, name the project kowsar, preset
 - shop/index.html has a noindex tag. Remove it at launch.
 - Products, prices, reviews, policies, email and bKash/Nagad numbers are samples.
 - Checkout is a demo. It does not receive orders or take payments.
+
+## Boss panel (/admin)
+- First visit asks you to create a PIN (demo lock, not real security).
+- Dashboard, products (add, edit, hide, delete, import/export), orders (status, details, CSV), settings (PIN, backup, reset).
+- Everything is stored in the browser you use. Product changes show in the shop on that same browser only.
+- Orders from customers' own phones do not reach the panel, because there is no server yet.
+- For real orders from many customers, move to a backend (for example Supabase) or Shopify/WooCommerce.

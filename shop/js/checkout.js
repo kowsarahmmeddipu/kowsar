@@ -103,6 +103,12 @@ function placeOrder() {
   var phoneV = $('co-phone').value.trim(), emailV = $('co-email').value.trim(), addrV = $('co-address').value.trim();
   orders.unshift({ ref: ref, date: Date.now(), items: bag.map(function (i) { return { id: i.id, color: i.color, size: i.size, qty: i.qty }; }), total: sub + fee, pay: pay, area: coState.area });
   orders = orders.slice(0, 20); lsSet('kowsar-orders', orders);
+  /* copy for the admin panel (/admin): keeps customer details and has no 20-order limit; same browser only */
+  try {
+    var adminOrders = JSON.parse(localStorage.getItem('kowsar-admin-orders') || '[]'); if (!Array.isArray(adminOrders)) adminOrders = [];
+    adminOrders.unshift({ ref: ref, date: Date.now(), items: orders[0].items, sub: sub, fee: fee, total: sub + fee, pay: pay, area: coState.area, status: 'New', cust: { name: name, phone: phoneV, email: emailV, address: addrV } });
+    localStorage.setItem('kowsar-admin-orders', JSON.stringify(adminOrders.slice(0, 500)));
+  } catch (er) {}
   if ($('co-save').checked) {
     profile = { name: name, phone: phoneV, email: emailV, size: profile.size || '' }; lsSet('kowsar-profile', profile);
     if (!addrs.length) { addrs.push({ label: 'Home', area: coState.area, text: addrV }); lsSet('kowsar-addrs', addrs); }
